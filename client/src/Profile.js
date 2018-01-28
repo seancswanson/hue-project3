@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Upload from './user/Upload';
+import Palette from './user/Palette';
+import Wheel from './user/Wheel';
+
 
 class Profile extends Component {
   render(){
     if(this.props.user && this.props.user.name){
-      return (<div>
+      return (
+        <div>
           <h2>HELLO AGAIN {this.props.user.name}!</h2>
           <h4>Your email is {this.props.user.email}</h4>
+          <Upload />
+          <Palette />
+          <Wheel />
         </div>);
     }
     else {
