@@ -16,9 +16,12 @@ nav a:hover {
   color: #7f4dd2;
 }
 
+.div--container__wheel {
+  flex-grow: 1;
+}
+
 .footer {
   background-color: #555;
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 20px;

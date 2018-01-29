@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-class Cloud extends Component {
 
-    uploadWidget() {
-        window.cloudinary.openUploadWidget({ cloud_name: 'huecloud', upload_preset: 'p22agdmm', tags:[]},
-            function(error, result) {
-                console.log(result);
-            });
-    }
+
+class Cloud extends Component {
     render(){
         return (
             <div className="main">
-                <h1>Galleria</h1>
-                <div className="upload">
-                    <button onClick={this.uploadWidget.bind(this)} className="upload-button">
+                <h1>Upload your image!</h1>
+                <div className="div--cloud__upload">
+                    <button onClick={this.props.callback} className="upload-button">
                         Add Image
                     </button>
                 </div>
+                <img src={this.props.url} />
             </div>
-
         );
     }
 }

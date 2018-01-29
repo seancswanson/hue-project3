@@ -28,6 +28,8 @@ app.use(function(req, res, next) {
 // Controllers
 app.use('/auth', require('./routes/auth'));
 
+// request.get('/detection')
+
 app.get('*', function(req, res, next) {
 	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
