@@ -15,7 +15,12 @@ router.post('/', function(req,res,next) {
     console.log('Status:', response.statusCode);
     console.log('Headers:', JSON.stringify(response.headers));
     console.log('Response:', body);
+    var dataObj = JSON.parse(body);
+    res.json(dataObj)
 }).auth(apiKey, apiSecret, true);
+
 })
+
+
 
 module.exports = router;
