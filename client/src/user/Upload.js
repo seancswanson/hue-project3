@@ -5,21 +5,6 @@ import Cloud from './Cloud';
 import ColorSquare from './ColorSquare';
 import axios from 'axios';
 
-// var imageColors;
-
-// function ColorSquare(props) {
-//     return(
-//         color.map(thing => ({
-//             return(
-//                 <div className="div--image-color" style={{backgroundColor: thing.html_color}}>
-//                 </div>
-//             )
-//         }))
-//     )
-// }
-
-
-
 class Upload extends Component {
     constructor(props){
         super(props);
