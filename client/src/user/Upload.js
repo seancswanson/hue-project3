@@ -5,7 +5,9 @@ import Cloud from './Cloud';
 import ColorSquare from './ColorSquare';
 import axios from 'axios';
 
-// var imageColors;
+var colorSquare;
+var upload;
+var detect;
 
 // function ColorSquare(props) {
 //     return(
@@ -18,7 +20,13 @@ import axios from 'axios';
 //     )
 // }
 
-
+const DetectedSquare = (props) => {
+    return(    
+        <div>
+          <div className="div--image-color" style={{backgroundColor: props.background}}></div>
+        </div> 
+        )
+      }
 
 class Upload extends Component {
     constructor(props){
@@ -58,13 +66,21 @@ class Upload extends Component {
     }
   
 	render(){
+    if (this.state.imageColors.length > 0){
+      colorSquare = <ColorSquare color={this.state.imageColors} />
+    } else {
+      upload = <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
+      detect = <button onClick={this.detectColors}>Detect Colors</button>
+    }
 		return(
       <div className="div--container__upload">
-        <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
-        <button onClick={this.detectColors}>Detect Colors</button>
-          {renderIf(this.state.colorResponse.length > 0)(
-            <ColorSquare color={this.state.imageColors} />
-            )}
+        {upload}
+        {detect}
+        {this.state.imageColors.map( color => (
+          <DetectedSquare background={color.html_code} />
+          )
+        )}
+        {colorSquare}
         </div>
 		)
 	}
