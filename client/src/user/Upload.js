@@ -3,7 +3,23 @@ import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 import renderIf from 'render-if';
 import Cloud from './Cloud';
 import ColorSquare from './ColorSquare';
+import tinycolor from 'tinycolor2';
 import axios from 'axios';
+
+
+var colorSquare;
+var upload;
+var detect;
+
+const DetectedSquare = (props) => {
+    return(    
+        <div>
+          <h1>{props.background.percent} % {props.background.closest_palette_color}</h1>
+          <div className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
+        </div> 
+        )
+      }
+
 
 class Upload extends Component {
     constructor(props){
@@ -43,13 +59,21 @@ class Upload extends Component {
     }
   
 	render(){
+    if (this.state.imageColors.length > 0){
+      colorSquare = <ColorSquare color={this.state.imageColors} />
+    } else {
+      upload = <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
+      detect = <button onClick={this.detectColors}>Detect Colors</button>
+    }
 		return(
       <div className="div--container__upload">
-        <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
-        <button onClick={this.detectColors}>Detect Colors</button>
-          {renderIf(this.state.colorResponse.length > 0)(
-            <ColorSquare color={this.state.imageColors} />
-            )}
+        {upload}
+        {detect}
+        {this.state.imageColors.map( color => (
+          <DetectedSquare background={color} />
+          )
+        )}
+        {colorSquare}
         </div>
 		)
 	}
