@@ -6,6 +6,7 @@ import ColorSquare from './ColorSquare';
 import tinycolor from 'tinycolor2';
 import axios from 'axios';
 
+
 var colorSquare;
 var upload;
 var detect;
@@ -18,6 +19,7 @@ const DetectedSquare = (props) => {
         </div> 
         )
       }
+
 
 class Upload extends Component {
     constructor(props){

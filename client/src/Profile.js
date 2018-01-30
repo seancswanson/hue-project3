@@ -14,7 +14,7 @@ class Profile extends Component {
           <h4>Your email is {this.props.user.email}</h4>
           <Upload />
           <Palette />
-          <Wheel />
+          <Wheel user={this.props.user}/>
         </div>);
     }
     else {

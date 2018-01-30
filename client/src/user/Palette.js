@@ -3,7 +3,12 @@ import React, {Component} from 'react';
 class Palette extends Component {
 	render(){
 		return(
-			<h1>Palette!</h1>
+			<div>
+				<h1>Palette!</h1>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
 		)
 	}
 }
