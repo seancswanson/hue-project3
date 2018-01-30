@@ -3,27 +3,18 @@ import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 import renderIf from 'render-if';
 import Cloud from './Cloud';
 import ColorSquare from './ColorSquare';
+import tinycolor from 'tinycolor2';
 import axios from 'axios';
 
 var colorSquare;
 var upload;
 var detect;
 
-// function ColorSquare(props) {
-//     return(
-//         color.map(thing => ({
-//             return(
-//                 <div className="div--image-color" style={{backgroundColor: thing.html_color}}>
-//                 </div>
-//             )
-//         }))
-//     )
-// }
-
 const DetectedSquare = (props) => {
     return(    
         <div>
-          <div className="div--image-color" style={{backgroundColor: props.background}}></div>
+          <h1>{props.background.percent} % {props.background.closest_palette_color}</h1>
+          <div className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
         </div> 
         )
       }
@@ -77,7 +68,7 @@ class Upload extends Component {
         {upload}
         {detect}
         {this.state.imageColors.map( color => (
-          <DetectedSquare background={color.html_code} />
+          <DetectedSquare background={color} />
           )
         )}
         {colorSquare}
