@@ -6,6 +6,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
+var tinycolor = require("tinycolor2");
+
 
 // Mongoose stuff
 var mongoose = require('mongoose');
