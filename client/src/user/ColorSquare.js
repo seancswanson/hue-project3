@@ -4,10 +4,10 @@ class ColorSquare extends Component {
 	render(){
 		return(    
          <div>
-        	{this.props.color.map(({color,index}) => (
-            <div className="div--image-color" style={{backgroundColor: color.html_color}}> </div>
-            ))}
-   			 </div> 
+            {this.props.color.forEach((color) => {
+            <div className="div--image-color" style={{backgroundColor: color.closest_palette_color_html_code}}></div>
+            })}
+   		</div> 
     		)
     	}
 	}
