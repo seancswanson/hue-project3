@@ -13,7 +13,7 @@ class Cloud extends Component {
                         Add Image
                     </button>
                 </div>
-                <img src={this.props.url} />
+                <img className="div--cloud__image" src={this.props.url} />
             </div>
         );
     }

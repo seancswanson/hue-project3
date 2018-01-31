@@ -87,6 +87,11 @@ nav a:hover {
   float: right;
 }
 
+.div--cloud__image {
+  max-height: 300px;
+  max-width: 300px;
+}
+
 /* DEFAULT STYLES FROM CREATE REACT APP MODULE */
 .App {
   text-align: center;
