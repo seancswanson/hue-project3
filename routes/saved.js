@@ -13,9 +13,13 @@ router.get('/', function(req, res){
 router.post('/', function(req, res, next){
 	console.log('user', req.body.user.email);
 	console.log('html', req.body.selected);
-	User.findOneAndUpdate(
+	User.update(
 		{email: req.body.user.email},
-		{$set: {saved: {selected: req.body.selected}}}
+		{$push: 
+			{saved: 
+				{selected: req.body.selected}
+			}
+		}
   	).then((result) => {
   		console.log(result);
   	}).catch(err => console.log(err));

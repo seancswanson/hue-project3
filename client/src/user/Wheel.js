@@ -11,7 +11,7 @@ class Wheel extends Component {
 	}
 
 	handleAdd = () => {
-		this.setState({selected: 'number22222'}, this.handleDB);
+		this.setState({selected: 'second'}, this.handleDB);
 	}
 
 	handleDB = () => {
