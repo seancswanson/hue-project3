@@ -11,6 +11,7 @@ class Profile extends Component {
     this.state = {
       upload: false,
       wheel: false,
+      selectedColor: ''
     }
   }
 
@@ -31,6 +32,21 @@ renderWheel = () => {
     wheel: true,
   })
 }
+
+renderWheelStoreColor = (color) => {
+    console.log("Clicked")
+    let base = this
+    base.setState({
+    upload: false,
+    wheel: true,
+    selectedColor: color
+  })
+}
+
+handleAdd = (color) => {
+    this.setState({selectedColor: color.hex});
+  }
+
   render(){
     if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === false){
       return (
@@ -46,7 +62,7 @@ renderWheel = () => {
         <div>
           <button className="button--profile" onClick={this.renderWheel}>Explore the Color</button>
           <h1>Upload then Detect Colors</h1>
-          <Upload callback={this.renderWheel}/>
+          <Upload renderWheelStoreColor={this.renderWheelStoreColor}/>
         </div>
       )
     } else if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === true) {
@@ -54,7 +70,7 @@ renderWheel = () => {
         <div>
          <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
           <h1>Color Explorer</h1>
-          <Wheel user={this.props.user} saved={JSON.stringify(this.props.user.saved)} />
+          <Wheel user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd}/>
         </div>
       )
     }

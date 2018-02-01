@@ -5,19 +5,12 @@ import Cloud from './Cloud';
 import tinycolor from 'tinycolor2';
 import axios from 'axios';
 import Wheel from './Wheel';
+import DetectedSquare from './DetectedSquare'
 
 
 var upload;
 var detect;
 
-const DetectedSquare = (props) => {
-    return(    
-        <div>
-          <h1 className="h1--detected__percent">{props.background.percent} % {props.background.closest_palette_color}</h1>
-          <div onClick={props.callback} className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
-        </div> 
-        )
-      }
 
 
 class Upload extends Component {
@@ -68,7 +61,7 @@ class Upload extends Component {
         {upload}
         {detect}
         {this.state.imageColors.map( color => (
-          <DetectedSquare background={color} callback={this.props.callback}/>
+          <DetectedSquare background={color} renderWheelStoreColor={this.props.renderWheelStoreColor}/>
           )
         )}
         </div>

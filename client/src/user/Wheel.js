@@ -11,16 +11,14 @@ class Wheel extends Component {
 		}
 	}
 
-	handleAdd = (color) => {
-		this.setState({selected: color.hex});
-	}
+
 
 	handleDB = () => {
 		let base = this
-		console.log(base.state.selected);
+		console.log(base.props.selectedColor);
 		console.log(this.props.user);
 		axios.post('/saved', {
-			selected: base.state.selected,
+			selected: base.props.selectedColor,
 			user: this.props.user
 		}).then((response) => {
 			console.log(response);
@@ -35,7 +33,7 @@ class Wheel extends Component {
 		return(
       <div className="div--container__wheel">
   			<h1>Wheel!</h1>
-  			<SketchPicker onChangeComplete={this.handleAdd} color={this.state.selected} presetColors={array1}/>
+  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
   			<button onClick={this.handleDB} className="faves">Add to palette</button>
       </div>
 		)
