@@ -10,7 +10,7 @@ class Profile extends Component {
     super(props);
     this.state = {
       upload: false,
-      wheel: false,
+      wheel: false
     }
   }
 
@@ -31,6 +31,8 @@ renderWheel = () => {
     wheel: true,
   })
 }
+
+
   render(){
     if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === false){
       return (
@@ -46,7 +48,7 @@ renderWheel = () => {
         <div>
           <button className="button--profile" onClick={this.renderWheel}>Explore the Color</button>
           <h1>Upload then Detect Colors</h1>
-          <Upload callback={this.renderWheel}/>
+          <Upload callback={this.renderWheel} colorFunction={this.storeColor}/>
         </div>
       )
     } else if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === true) {
@@ -54,7 +56,7 @@ renderWheel = () => {
         <div>
          <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
           <h1>Color Explorer</h1>
-          <Wheel user={this.props.user} saved={JSON.stringify(this.props.user.saved)} />
+          <Wheel starting={this.props.state} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} />
         </div>
       )
     }

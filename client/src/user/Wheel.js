@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
 import Profile from '../Profile';
 import {SketchPicker} from 'react-color';
+import ColorOptions from './ColorOptions';
 import axios from 'axios';
 
 class Wheel extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			selected: ''
+			selected: '',
 		}
 	}
 
 	handleAdd = (color) => {
 		this.setState({selected: color.hex});
+		console.log(this.props.starting);
 	}
 
 	addDB = () => {
@@ -48,6 +50,7 @@ class Wheel extends Component {
   			<SketchPicker onChangeComplete={this.handleAdd} color={this.state.selected} presetColors={array1}/>
   			<button onClick={this.addDB} className="faves">Add to palette</button>
   			<button onClick={this.removeDB}>Remove from palette</button>
+  			<ColorOptions />
       </div>
 		)
 	}

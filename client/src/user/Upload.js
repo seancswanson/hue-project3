@@ -3,20 +3,12 @@ import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 import renderIf from 'render-if';
 import Cloud from './Cloud';
 import tinycolor from 'tinycolor2';
+import Profile from '../Profile';
 import axios from 'axios';
 import Wheel from './Wheel';
 
 var upload;
 var detect;
-
-const DetectedSquare = (props) => {
-    return(    
-        <div>
-          <h1>{props.background.percent} % {props.background.closest_palette_color}</h1>
-          <div onClick={props.callback} className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
-        </div> 
-        )
-      }
 
 
 class Upload extends Component {
@@ -67,7 +59,7 @@ class Upload extends Component {
         {upload}
         {detect}
         {this.state.imageColors.map( color => (
-          <DetectedSquare background={color} callback={this.props.callback}/>
+          <DetectedSquare background={color} callback={this.props.callback} colorFunction={this.props.colorFunction}/>
           )
         )}
         </div>
