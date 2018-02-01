@@ -1,35 +1,49 @@
 /* CUSTOM STYLES */
 nav {
   width: 100%;
-  background-color: #555;
-  padding: 10px 0;
+  background-color: black;
 }
 
 nav a {
-  margin: 10px;
+  margin: 10px 15px;
   text-decoration: none;
-  font-size: 18px;
-  color: #4ff;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: white;
+  text-align: center;
+  float: left;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav span {
+  float: right;
+  line-height: 70px;
 }
 
 nav a:hover {
-  color: #7f4dd2;
+  color: white;
 }
 
 .div--container__wheel {
   flex-grow: 1;
 }
 
+.span--brand__title {
+  margin-left: 8px;
+  font-size: 27px;
+}
 .footer {
-  background-color: #555;
+  background-color: black;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 20px;
+  height: 60px;
 }
 
 .footer-text {
   color: #fff;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .space {
@@ -51,6 +65,10 @@ nav a:hover {
 .div--image-color {
   width: 100%;
   height: 200px;
+}
+
+.img--brand__logo {
+  max-width: 70px;
 }
 
 .error {

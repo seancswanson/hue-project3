@@ -7,7 +7,11 @@ import axios from 'axios';
 import Wheel from './Wheel';
 
 
+<<<<<<< HEAD
 
+=======
+var colorSquare;
+>>>>>>> 007f385bd6ed20f14f701b9e9cd48ab1e4324103
 var upload;
 var detect;
 
@@ -34,7 +38,7 @@ class Upload extends Component {
     uploadWidget = () => {
       let imageURL;
       let base = this
-        window.cloudinary.openUploadWidget({ cloud_name: 'huecloud', upload_preset: 'p22agdmm', tags:[]},
+        window.cloudinary.openUploadWidget({ cloud_name: 'huecloud', upload_preset: 'p22agdmm', tags:[], stylesheet: './CloudinaryWidget.css'},
             function(error, result) {
              base.setState({imageUrl: result[0].secure_url});
              console.log(base.state.imageUrl)

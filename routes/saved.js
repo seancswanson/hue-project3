@@ -25,4 +25,13 @@ router.post('/', function(req, res, next){
   	}).catch(err => console.log(err));
 });
 
+router.delete('/', function(req, res, next){
+	User.deleteOne(
+		{saved: {selection: req.body.selected}}, function(err){
+			if(err){
+				console.log(err);
+			}
+	});
+})
+
 module.exports = router;

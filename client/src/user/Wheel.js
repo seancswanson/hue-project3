@@ -15,7 +15,7 @@ class Wheel extends Component {
 		this.setState({selected: color.hex});
 	}
 
-	handleDB = () => {
+	addDB = () => {
 		let base = this
 		console.log(base.state.selected);
 		console.log(this.props.user);
@@ -36,7 +36,8 @@ class Wheel extends Component {
       <div className="div--container__wheel">
   			<h1>Wheel!</h1>
   			<SketchPicker onChangeComplete={this.handleAdd} color={this.state.selected} presetColors={array1}/>
-  			<button onClick={this.handleDB} className="faves">Add to palette</button>
+  			<button onClick={this.addDB} className="faves">Add to palette</button>
+  			<button>Remove from palette</button>
       </div>
 		)
 	}
