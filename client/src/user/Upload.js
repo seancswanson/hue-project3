@@ -6,15 +6,6 @@ import tinycolor from 'tinycolor2';
 import axios from 'axios';
 import Wheel from './Wheel';
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-var colorSquare;
->>>>>>> 007f385bd6ed20f14f701b9e9cd48ab1e4324103
-=======
->>>>>>> e296b5f2ff885f55b430bdf4ca56359204231912
 var upload;
 var detect;
 

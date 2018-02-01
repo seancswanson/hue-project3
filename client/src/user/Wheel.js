@@ -28,6 +28,16 @@ class Wheel extends Component {
 		})
 	}
 
+	// removeDB = () => {
+	// 	console.log('got to delete axios');		
+	// 	axios.delete('/saved', {
+	// 		selected: this.state.selected,
+	// 		user: this.props.user
+	// 	}).then((response) => {
+	// 		console.log(response);
+	// 	})
+	// }
+
 	render(){
 		let array1 = []
 		console.log(this.props.saved);
@@ -37,7 +47,7 @@ class Wheel extends Component {
   			<h1>Wheel!</h1>
   			<SketchPicker onChangeComplete={this.handleAdd} color={this.state.selected} presetColors={array1}/>
   			<button onClick={this.addDB} className="faves">Add to palette</button>
-  			<button>Remove from palette</button>
+  			<button onClick={this.removeDB}>Remove from palette</button>
       </div>
 		)
 	}
