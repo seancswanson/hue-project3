@@ -13,7 +13,7 @@ var detect;
 const DetectedSquare = (props) => {
     return(    
         <div>
-          <h1>{props.background.percent} % {props.background.closest_palette_color}</h1>
+          <h1 className="h1--detected__percent">{props.background.percent} % {props.background.closest_palette_color}</h1>
           <div onClick={props.callback} className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
         </div> 
         )
