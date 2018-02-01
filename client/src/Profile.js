@@ -38,13 +38,13 @@ renderWheel = () => {
           <h2>HELLO AGAIN {this.props.user.name}!</h2>
           <h4>Your email is {this.props.user.email}</h4>
           <h1>WEEEEE</h1>
-          <button onClick={this.renderUpload}>Upload and Detect</button>
-          <button onClick={this.renderWheel}>Explore the Color</button>
+          <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
+          <button className="button--profile" onClick={this.renderWheel}>Explore the Color</button>
         </div>);
     } else if(this.props.user && this.props.user.name && this.state.upload === true && this.state.wheel === false) {
         return(
         <div>
-          <button onClick={this.renderWheel}>Explore the Color</button>
+          <button className="button--profile" onClick={this.renderWheel}>Explore the Color</button>
           <h1>Upload then Detect Colors</h1>
           <Upload callback={this.renderWheel}/>
         </div>
@@ -52,7 +52,7 @@ renderWheel = () => {
     } else if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === true) {
         return(
         <div>
-         <button onClick={this.renderUpload}>Upload and Detect</button>
+         <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
           <h1>Color Explorer</h1>
           <Wheel user={this.props.user} saved={JSON.stringify(this.props.user.saved)} />
         </div>

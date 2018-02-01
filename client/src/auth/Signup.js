@@ -68,7 +68,9 @@ class Signup extends Component {
               </form>);
     }
     return (
-      <div>
+      <div className="div--container__form">
+        <h1 className="h1--auth">Create an account!</h1>
+        <h1 className="h1--auth__free">(it's free)</h1>
         {form}
         {this.props.user ? <Redirect to="/profile" /> : ''}
       </div>

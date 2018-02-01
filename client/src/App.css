@@ -1,7 +1,11 @@
-/* CUSTOM STYLES */
+/********** CUSTOM STYLES *********/
+
+
+/**** NAV BAR *****/
 nav {
   width: 100%;
   background-color: black;
+  font-family: 'Oswald';
 }
 
 nav a {
@@ -25,50 +29,89 @@ nav a:hover {
   color: white;
 }
 
-.div--container__wheel {
-  flex-grow: 1;
-}
-
 .span--brand__title {
   margin-left: 8px;
   font-size: 27px;
 }
-.footer {
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-}
 
-.footer-text {
-  color: #fff;
-  font-size: 20px;
-}
-
-.space {
-  margin: 15px 0;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #11f;
-  border-radius: 2px;
-  border: none;
-  padding: 3px;
-}
-
-.btn-primary:hover {
-  background-color: #77f;
-}
-
-.div--image-color {
-  width: 100%;
-  height: 200px;
-}
 
 .img--brand__logo {
   max-width: 70px;
+}
+
+/**** HOME *****/
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.div--container__home{
+  position: relative;
+  top: -40px;
+}
+
+.img--home__logo {
+  max-width: 300px;
+  margin: 10px;
+  animation-name: spin;
+  animation-duration: 9000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+/**** AUTH *****/
+
+.div--container__form input{
+  width: 500px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 40px;
+}
+
+.div--container__form input[type="submit"]{
+  font-family: 'Oswald';
+  font-size: 36px;
+  padding: 20px;
+  width: 300px;
+  background: #a05f9e;
+  border:none;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin: 30px auto;
+  letter-spacing: 2px;
+  box-shadow: 0 0 5px 1px white;
+}
+
+.h1--auth {
+  font-size: 60px;
+  font-family: 'Droid Serif';
+  font-style: italic;
+  text-transform: lowercase;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.h1--auth__free {
+  font-size: 20px;
+  font-family: 'Droid Serif';
+  font-style: italic;
+  text-transform: lowercase;
+  color: white;
+  letter-spacing: 2px;
+  position: relative;
+  top: -10px;
 }
 
 .error {
@@ -98,18 +141,72 @@ nav a:hover {
   margin: 10px auto;
 }
 
-.x-button {
-  background-color: red;
+/****** Profile *******/
+.button--profile {
+  font-family: 'Oswald';
+  font-size: 36px;
+  padding: 20px;
+  width: 300px;
+  background: #a05f9e;
+  border:none;
+  border-radius: 6px;
   color: white;
-  border-radius: 2px;
-  float: right;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin: 30px auto;
+  letter-spacing: 2px;
+  box-shadow: 0 0 5px 1px white;
 }
+
+.h2--profile__droid {
+  color: white;
+  font-family: 'Droid Serif';
+  font-style: italic;
+  width: 350px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+}
+
+.h2--profile {
+  font-size: 40px;
+  color: white;
+}
+
+.h3--profile{
+  font-size: 17px;
+  font-family: 'Droid Serif';
+  position: relative;
+  font-style: italic;
+  top:20px;
+}
+
+/*** Upload ***/
+
+.div--image-color {
+  width: 100%;
+  height: 200px;
+}
+
 
 .div--cloud__image {
   max-height: 300px;
   max-width: 300px;
 }
 
+/*** Color Picker ***/
+
+.div--container__wheel {
+  flex-grow: 1;
+}
+/*** Saved Colors ***/
+
+.x-button {
+  background-color: red;
+  color: white;
+  border-radius: 2px;
+  float: right;
+}
 .div--palette__saved{
   display: inline-block;
   margin-left: 100px;
@@ -117,8 +214,50 @@ nav a:hover {
   width: 50px;
 }
 
-/* DEFAULT STYLES FROM CREATE REACT APP MODULE */
+/***** Footer *****/
+
+.footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer-text {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  right: 10px;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  float: right;
+}
+
+
+
+
+/* DEFAULT STYLES */
 .App {
   text-align: center;
 }
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #11f;
+  border-radius: 2px;
+  border: none;
+  padding: 3px;
+}
+
+.btn-primary:hover {
+  background-color: #77f;
+}
+
 
