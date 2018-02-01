@@ -3,15 +3,13 @@ import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 import renderIf from 'render-if';
 import Cloud from './Cloud';
 import tinycolor from 'tinycolor2';
+import Profile from '../Profile';
 import axios from 'axios';
 import Wheel from './Wheel';
 import DetectedSquare from './DetectedSquare'
 
-
 var upload;
 var detect;
-
-
 
 class Upload extends Component {
     constructor(props){

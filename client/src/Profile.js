@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Upload from './user/Upload';
-import Palette from './user/Palette';
 import Wheel from './user/Wheel';
+import complementaryColors from 'complementary-colors';
+import Color from 'color';
 
+var color;
+var myColor;
 
 class Profile extends Component {
   constructor(props) {
@@ -11,7 +14,8 @@ class Profile extends Component {
     this.state = {
       upload: false,
       wheel: false,
-      selectedColor: ''
+      selectedColor: '',
+      colorsToAnalyze: []
     }
   }
 
@@ -39,8 +43,57 @@ renderWheelStoreColor = (color) => {
     base.setState({
     upload: false,
     wheel: true,
-    selectedColor: color
+    selectedColor: color,
+
   })
+}
+
+handleComp = () => {
+  let base = this;
+  console.log(base.state.selectedColor);
+  color = base.state.selectedColor;
+  myColor = new complementaryColors(color);
+  myColor = myColor.complementary();
+  base.setState({
+    colorsToAnalyze: myColor
+  })
+  console.log(myColor);
+}
+
+handleAnalogous = () => {
+  let base = this;
+  console.log(base.state.selectedColor);
+  color = base.state.selectedColor;
+  myColor = new complementaryColors(color);
+  myColor = myColor.analogous();
+  base.setState({
+    colorsToAnalyze: myColor
+  })
+  console.log(myColor);
+}
+
+handleTriadic = () => {
+  let base = this;
+  console.log(base.state.selectedColor);
+  color = base.state.selectedColor;
+  myColor = new complementaryColors(color);
+  myColor = myColor.splitComplementary();
+  base.setState({
+    colorsToAnalyze: myColor
+  })
+  console.log(myColor);
+}
+
+handleTetradic = () => {
+  let base = this;
+  console.log(base.state.selectedColor);
+  color = base.state.selectedColor;
+  myColor = new complementaryColors(color);
+  myColor = myColor.tetradic();
+  base.setState({
+    colorsToAnalyze: myColor
+  })
+  console.log(myColor);
 }
 
 handleAdd = (color) => {
@@ -70,7 +123,7 @@ handleAdd = (color) => {
         <div>
          <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
           <h1>Color Explorer</h1>
-          <Wheel user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd}/>
+          <Wheel colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd}/>
         </div>
       )
     }
