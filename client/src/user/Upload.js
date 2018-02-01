@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 import renderIf from 'render-if';
 import Cloud from './Cloud';
-import ColorSquare from './ColorSquare';
 import tinycolor from 'tinycolor2';
 import axios from 'axios';
+import Wheel from './Wheel';
 
-var colorSquare;
+
 var upload;
 var detect;
 
@@ -56,10 +56,9 @@ class Upload extends Component {
           console.log('backend error we hope', err)
       })
     }
-  
+
 	render(){
     if (this.state.imageColors.length > 0){
-      colorSquare = <ColorSquare color={this.state.imageColors} />
     } else {
       upload = <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
       detect = <button onClick={this.detectColors}>Detect Colors</button>
@@ -72,7 +71,6 @@ class Upload extends Component {
           <DetectedSquare background={color} callback={this.props.callback}/>
           )
         )}
-        {colorSquare}
         </div>
 		)
 	}
