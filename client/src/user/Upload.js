@@ -14,7 +14,7 @@ const DetectedSquare = (props) => {
     return(    
         <div>
           <h1>{props.background.percent} % {props.background.closest_palette_color}</h1>
-          <div className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
+          <div onClick={props.callback} className="div--image-color" style={{backgroundColor: props.background.html_code}}></div>
         </div> 
         )
       }
@@ -69,7 +69,7 @@ class Upload extends Component {
         {upload}
         {detect}
         {this.state.imageColors.map( color => (
-          <DetectedSquare background={color} />
+          <DetectedSquare background={color} callback={this.props.callback}/>
           )
         )}
         {colorSquare}
