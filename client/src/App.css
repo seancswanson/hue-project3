@@ -2,6 +2,7 @@
 nav {
   width: 100%;
   background-color: black;
+  font-family: 'Oswald';
 }
 
 nav a {
@@ -25,14 +26,78 @@ nav a:hover {
   color: white;
 }
 
+.button--profile {
+  font-family: 'Oswald';
+  font-size: 36px;
+  padding: 20px;
+  width: 300px;
+  background: #a05f9e;
+  border:none;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin: 30px auto;
+  letter-spacing: 2px;
+  box-shadow: 0 0 5px 1px white;
+}
+
 .div--container__wheel {
   flex-grow: 1;
 }
 
+.div--container__home{
+  position: relative;
+  top: -40px;
+}
+.h2--profile__droid {
+  color: white;
+  font-family: 'Droid Serif';
+  font-style: italic;
+  width: 350px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+}
+.h2--profile {
+  font-size: 40px;
+  color: white;
+}
+.h3--profile{
+  font-size: 17px;
+  font-family: 'Droid Serif';
+  position: relative;
+  font-style: italic;
+  top:20px;
+}
 .span--brand__title {
   margin-left: 8px;
   font-size: 27px;
 }
+
+.img--home__logo {
+  max-width: 300px;
+  margin: 10px;
+  animation-name: spin;
+  animation-duration: 9000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 .footer {
   background-color: black;
   position: absolute;
@@ -41,9 +106,64 @@ nav a:hover {
   height: 60px;
 }
 
+.footer a {
+  color: white;
+}
+
 .footer-text {
   color: #fff;
   font-size: 20px;
+  position: relative;
+  top: 15px;
+  right: 10px;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  float: right;
+}
+
+.div--container__form input{
+  width: 500px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 40px;
+}
+
+.div--container__form input[type="submit"]{
+  font-family: 'Oswald';
+  font-size: 36px;
+  padding: 20px;
+  width: 300px;
+  background: #a05f9e;
+  border:none;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin: 30px auto;
+  letter-spacing: 2px;
+  box-shadow: 0 0 5px 1px white;
+}
+
+
+.h1--auth {
+  font-size: 60px;
+  font-family: 'Droid Serif';
+  font-style: italic;
+  text-transform: lowercase;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.h1--auth__free {
+  font-size: 20px;
+  font-family: 'Droid Serif';
+  font-style: italic;
+  text-transform: lowercase;
+  color: white;
+  letter-spacing: 2px;
+  position: relative;
+  top: -10px;
 }
 
 .space {

@@ -60,7 +60,8 @@ class Login extends Component {
               </form>);
     }
     return (
-      <div>
+      <div className="div--container__form">
+      <h1 className="h1--auth">Welcome Back!</h1>
         {form}
       </div>
     );
