@@ -25,7 +25,7 @@ router.post('/', function(req, res, next){
   	}).catch(err => console.log(err));
 });
 
-// router.post('/', function(req, res, next){
+// router.delete('/', function(req, res, next){
 // 	console.log('user', req.body.user.email);
 // 	console.log('html', req.body.selected);
 // 	User.update(

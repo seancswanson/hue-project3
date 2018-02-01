@@ -10,6 +10,8 @@
     "bcrypt": "^1.0.3",
     "body-parser": "~1.18.2",
     "cloudinary-react": "^1.0.6",
+    "color": "^3.0.0",
+    "complementary-colors": "^1.0.5",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -31,8 +33,10 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-swipeable-views": "^0.12.10",
+    "reactstrap": "^4.8.0",
     "render-if": "^0.1.1",
     "request": "^2.83.0",
+    "save": "^2.3.2",
     "serve-favicon": "~2.4.5",
     "tinycolor2": "^1.4.1"
   }

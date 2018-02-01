@@ -6,10 +6,10 @@ import tinycolor from 'tinycolor2';
 import Profile from '../Profile';
 import axios from 'axios';
 import Wheel from './Wheel';
+import DetectedSquare from './DetectedSquare'
 
 var upload;
 var detect;
-
 
 class Upload extends Component {
     constructor(props){
@@ -59,7 +59,7 @@ class Upload extends Component {
         {upload}
         {detect}
         {this.state.imageColors.map( color => (
-          <DetectedSquare background={color} callback={this.props.callback} colorFunction={this.props.colorFunction}/>
+          <DetectedSquare background={color} renderWheelStoreColor={this.props.renderWheelStoreColor}/>
           )
         )}
         </div>

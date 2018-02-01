@@ -3,26 +3,22 @@ import Profile from '../Profile';
 import {SketchPicker} from 'react-color';
 import ColorOptions from './ColorOptions';
 import axios from 'axios';
+import CompSquare from './CompSquare';
 
 class Wheel extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			selected: '',
+			selected: ''
 		}
-	}
-
-	handleAdd = (color) => {
-		this.setState({selected: color.hex});
-		console.log(this.props.starting);
 	}
 
 	addDB = () => {
 		let base = this
-		console.log(base.state.selected);
+		console.log(base.props.selectedColor);
 		console.log(this.props.user);
 		axios.post('/saved', {
-			selected: base.state.selected,
+			selected: base.props.selectedColor,
 			user: this.props.user
 		}).then((response) => {
 			console.log(response);
@@ -44,16 +40,28 @@ class Wheel extends Component {
 		let array1 = []
 		console.log(this.props.saved);
     	JSON.parse(this.props.saved).forEach(item => array1.push(item.selected));
+    	if(!(this.props.selectedState) && this.props.colorsToAnalyze.length === 0){
+    		return (<div className="div--container__wheel">
+  			<h1>Wheel!</h1>
+  			<ColorOptions handleComp={this.props.compCallback}/>
+  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
+  			<button onClick={this.handleDB} className="faves">Add to palette</button>
+      </div>)
+    	} else {
 		return(
       <div className="div--container__wheel">
   			<h1>Wheel!</h1>
-  			<SketchPicker onChangeComplete={this.handleAdd} color={this.state.selected} presetColors={array1}/>
-  			<button onClick={this.addDB} className="faves">Add to palette</button>
-  			<button onClick={this.removeDB}>Remove from palette</button>
-  			<ColorOptions />
+  			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback}/>
+  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
+  			<button onClick={this.handleDB} className="faves">Add to palette</button>
+        {this.props.colorsToAnalyze.map( color => (
+          <CompSquare background={color} />
+          )
+        )}
       </div>
 		)
 	}
+}
 }
 
 export default Wheel;
