@@ -15,7 +15,7 @@ class Nav extends Component {
     return(
         <div>
           <nav className="nav">
-            <a href="/">Home</a>
+            <a href="/"><img className="img--brand__logo" src="https://cdn.pixabay.com/photo/2014/09/21/18/22/color-455365_640.png" /><span className="span--brand__title">hue</span></a>
             {links}
           </nav>
         </div>
