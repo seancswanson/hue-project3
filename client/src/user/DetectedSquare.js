@@ -9,8 +9,9 @@ class DetectedSquare extends Component {
 
   render(){
     return(    
-        <div>
-          <h1 className="h1--detected__percent">{this.props.background.percent} % {this.props.background.closest_palette_color}</h1>
+        <div className="div--container__detected">
+          <h3 className="div--detected__h3">{this.props.background.percent} % </h3>
+          <h3 className="div--detected__h3">{this.props.background.closest_palette_color}</h3>
           <div onClick={this.storeVariableWithCallback} className="div--image-color" style={{backgroundColor: this.props.background.html_code}}></div>
         </div> 
         )

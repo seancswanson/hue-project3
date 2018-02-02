@@ -59,7 +59,7 @@ class Upload extends Component {
         {upload}
         {detect}
         {this.state.imageColors.map( color => (
-          <DetectedSquare background={color} renderWheelStoreColor={this.props.renderWheelStoreColor}/>
+          <div className="div--container__square"><DetectedSquare background={color} renderWheelStoreColor={this.props.renderWheelStoreColor}/></div>
           )
         )}
         </div>
