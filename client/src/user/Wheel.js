@@ -11,11 +11,7 @@ class Wheel extends Component {
 		this.state = {
 			added: false,
 		}
-	}
-
-	componentDidMount(){
-		this.addDB();
-	}
+	};
 
 	addDB = () => {
 		let base = this
@@ -48,7 +44,7 @@ class Wheel extends Component {
     	if(!(this.props.selectedState) && this.props.colorsToAnalyze.length === 0){
     		return (<div className="div--container__wheel">
   			<h1>Wheel!</h1>
-  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
+  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1} />
   			<button onClick={this.addDB} className="faves">Add to palette</button>
   			<ColorOptions handleComp={this.props.compCallback}/>
       </div>)

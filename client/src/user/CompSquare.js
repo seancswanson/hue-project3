@@ -9,7 +9,7 @@ class CompSquare extends Component {
 
   render(){
     return(    
-        <div>
+        <div className="div--image__comp">
           <div className="div--image-color" style={{backgroundColor: 'rgb(' + this.props.background.r + ","+ this.props.background.g + ","+ this.props.background.b + ')'}}></div>
         </div> 
         )
