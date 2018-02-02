@@ -21,23 +21,9 @@ router.post('/', function(req, res, next){
 			}
 		}
   	).then((result) => {
+  		res.send(result);
   		console.log(result);
   	}).catch(err => console.log(err));
 });
-
-// router.delete('/', function(req, res, next){
-// 	console.log('user', req.body.user.email);
-// 	console.log('html', req.body.selected);
-// 	User.update(
-// 		{email: req.body.user.email},
-// 		{$pull: 
-// 			{saved: 
-// 				{selected: req.body.selected}
-// 			}
-// 		}
-//   	).then((result) => {
-//   		console.log(result);
-//   	}).catch(err => console.log(err));
-// });
 
 module.exports = router;
