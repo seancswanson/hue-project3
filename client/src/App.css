@@ -6,13 +6,14 @@ nav {
   width: 100%;
   background-color: black;
   font-family: 'Oswald';
+  height: 50px;
 }
 
 nav a {
   margin: 10px 15px;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 29px;
   color: white;
   text-align: center;
   float: left;
@@ -22,7 +23,7 @@ nav a {
 
 nav span {
   float: right;
-  line-height: 70px;
+  line-height: 30px;
 }
 
 nav a:hover {
@@ -36,7 +37,9 @@ nav a:hover {
 
 
 .img--brand__logo {
-  max-width: 70px;
+  max-width: 55px;
+  position: relative;
+  top: -10px;
 }
 
 /**** HOME *****/
@@ -56,8 +59,8 @@ nav a:hover {
 }
 
 .img--home__logo {
-  max-width: 300px;
-  margin: 10px;
+  max-width: 200px;
+  margin: 5px;
   animation-name: spin;
   animation-duration: 9000ms;
   animation-iteration-count: infinite;
@@ -77,12 +80,17 @@ nav a:hover {
   font-size: 40px;
 }
 
+.signup{
+  position: relative;
+  top: -40px;
+}
+
 .div--container__form input[type="submit"]{
   font-family: 'Oswald';
-  font-size: 36px;
+  font-size: 42px;
   padding: 20px;
   width: 300px;
-  background: #a05f9e;
+  background: #c49cc3;
   border:none;
   border-radius: 6px;
   color: white;
@@ -115,18 +123,24 @@ nav a:hover {
 }
 
 .error {
-  background-color: pink;
-  color: red;
-  border: 1px solid red;
-  border-radius: 2px;
-  padding: 10px 30px;
-  width: 75%;
+  background-color: indianred;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Oswald';
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 5px 30px;
+  width: 200px;
   margin: 10px auto;
+  position: relative;
+  top: -5px;
+  z-index: 999;
+  border: 2px solid black;
 }
 
 .success {
   background-color: #ceffce;
-  color: green;
+  color: white;
   border: 1px solid green;
   border-radius: 2px;
   padding: 10px 30px;
@@ -141,22 +155,90 @@ nav a:hover {
   margin: 10px auto;
 }
 
+.x-button {
+  font-family: 'Oswald';
+  font-size: 18px;
+  line-height: 18px;
+  background: none !important;
+  border: none;
+}
+
 /****** Profile *******/
+.div--container__action {
+  position: relative;
+  top: -40px;
+}
+
 .button--profile {
   font-family: 'Oswald';
-  font-size: 36px;
+  font-size: 22px;
   padding: 20px;
   width: 300px;
-  background: #a05f9e;
+  background: #c49cc3;
   border:none;
   border-radius: 6px;
   color: white;
+  text-shadow: 2px 3px cadetblue;
   text-align: center;
   text-transform: uppercase;
   display: block;
-  margin: 30px auto;
+  margin: 10px auto;
   letter-spacing: 2px;
-  box-shadow: 0 0 5px 1px white;
+  box-shadow: 0 0 7px 0px white;
+}
+
+.button--nav__picker {
+  padding:  10px;
+  display: inline-block;
+  position: relative;
+  left: -50px;
+  bottom: -190px;
+}
+
+.button--nav__upload {
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  left: -100px;
+  bottom: -190px;
+}
+
+.button--above__picker {
+  bottom: 5px !important;
+  left: -80px !important;
+}
+
+.button--below
+button--below{
+  bottom: -250px !important;
+}
+.button--above__detect {
+  bottom: -35px!important;
+  left: -80px!important;
+}
+
+.gray {
+  -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(80%);
+}
+
+.h2--profile__greeting {
+  font-family: 'Droid Serif' !important;
+  text-transform: lowercase !important;
+  font-size: 44px !important;
+  font-style: italic !important;
+  color: black !important;
+  letter-spacing: 1px;
+}
+
+.h4--profile__greeting {
+  font-family: 'Droid Serif' !important;
+  font-size: 25px !important;
+  font-style: italic !important;
+  text-transform: lowercase !important;
+  color: black !important;
+  position: relative !important;
+  top: 30px !important;
 }
 
 .h2--profile__droid {
@@ -166,19 +248,23 @@ nav a:hover {
   width: 350px;
   letter-spacing: 1px;
   margin: 0 auto;
+
 }
 
 .h2--profile {
-  font-size: 40px;
+  font-size: 50px;
   color: white;
+    border-bottom: 3px double white;
+    max-width: 78px;
+    margin: 10px auto;
 }
 
 .h3--profile{
-  font-size: 17px;
+  font-size: 12px;
   font-family: 'Droid Serif';
   position: relative;
   font-style: italic;
-  top:20px;
+  top: 3px;
 }
 
 /*** Upload ***/
@@ -187,8 +273,22 @@ nav a:hover {
   margin: 10px auto;
 }
 
+.div--container__square {
+  display: table-cell;
+  margin: 10px;
+}
+
+.div--container__detected {
+  display: inline-block;
+  margin: inherit;
+}
+
+.div--detected__h3 {
+  font-size: 15px;
+   margin: 10px;
+}
+
 .div--image-color {
-  width: 50%;
   margin: 5px auto;
   height: 200px;
 }
@@ -243,7 +343,7 @@ nav a:hover {
 
 .footer-text {
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   top: 15px;
   right: 10px;

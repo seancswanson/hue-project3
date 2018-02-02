@@ -72,6 +72,7 @@ class App extends Component {
   }
 
   render() {
+    if(!(this.state.user)){
     return (
       <div className="App">
         <Router>
@@ -92,7 +93,23 @@ class App extends Component {
         <Footer />
       </div>
     );
+  } else {
+    return(
+      <div className="App">
+        <Router>
+          <div>
+            <Nav user={this.state.user} />
+            <div className="space">
+            <Route path="/profile" component={
+                () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
+            </div>
+          </div>
+        </Router>
+        <Footer />
+      </div>
+      )
   }
+}
 }
 
 export default App;

@@ -103,32 +103,37 @@ handleAdd = (color) => {
   render(){
     if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === false){
       return (
-        <div>
-          <h2>HELLO AGAIN {this.props.user.name}!</h2>
-          <h4>Your email is {this.props.user.email}</h4>
-          <h1>WEEEEE</h1>
-          <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
-          <button className="button--profile" onClick={this.renderWheel}>Explore the Color</button>
+        <div className="div--container__action">
+          <button className="button--profile button--nav__upload button--below" onClick={this.renderUpload}>Upload and Detect</button>
+          <button className="button--profile button--nav__picker button--below" onClick={this.renderWheel}>Color Picker</button>
+          <h2 className="h2--profile__greeting">HELLO, {this.props.user.name}!</h2>
+          <h4 className="h4--profile__greeting">Get started using the buttons below</h4>
         </div>);
     } else if(this.props.user && this.props.user.name && this.state.upload === true && this.state.wheel === false) {
         return(
         <div>
-          <button className="button--profile" onClick={this.renderWheel}>Explore the Color</button>
-          <h1>Upload then Detect Colors</h1>
+          <button className="button--profile button--nav__picker button--above__picker" onClick={this.renderWheel}>Explore the Color</button>
           <Upload renderWheelStoreColor={this.renderWheelStoreColor}/>
         </div>
       )
     } else if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === true) {
         return(
-        <div>
-         <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
-          <h1>Color Explorer</h1>
-          <Wheel colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd} updateUser={this.props.updateUser} />
+        <div className="div--container__action">
+          <button className="button--profile button--nav__upload button--above__detect" onClick={this.renderUpload}>Upload and Detect</button>
+          <Wheel colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd }/>
         </div>
       )
     }
     else {
-      return (<p>This is a profile page. You need to be logged in to view it.</p>);
+      return (
+        <div className="div--container__home">
+          <p><img className="img--home__logo gray" src="http://res.cloudinary.com/huecloud/image/upload/v1517519224/huelogo_yufyyq.png" /></p>
+          <h2 className="h2--profile__droid">You need an account to view this page!</h2>
+          <h3 className="h3--profile">Been here before?</h3>
+          <Link to='/login'><button className="button--profile">login</button></Link>
+          <h3 className="h3--profile">Need an account?</h3>
+          <Link to='/signup'><button className="button--profile">signup</button></Link>
+        </div>);
     }
   }
 }

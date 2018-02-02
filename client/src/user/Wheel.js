@@ -48,17 +48,17 @@ class Wheel extends Component {
     	if(!(this.props.selectedState) && this.props.colorsToAnalyze.length === 0){
     		return (<div className="div--container__wheel">
   			<h1>Wheel!</h1>
-  			<ColorOptions handleComp={this.props.compCallback}/>
   			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
   			<button onClick={this.addDB} className="faves">Add to palette</button>
+  			<ColorOptions handleComp={this.props.compCallback}/>
       </div>)
     	} else {
 		return(
       <div className="div--container__wheel">
   			<h1>Wheel!</h1>
-  			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback} />
   			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
-  			<button onClick={this.addDB} className="faves">Add to palette</button>
+  			<button onClick={this.handleDB} className="faves">Add to palette</button>
+  			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback}/>
         {this.props.colorsToAnalyze.map( color => (
           <CompSquare background={color} />
           )
