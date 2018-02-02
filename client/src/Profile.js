@@ -123,7 +123,7 @@ handleAdd = (color) => {
         <div>
          <button className="button--profile" onClick={this.renderUpload}>Upload and Detect</button>
           <h1>Color Explorer</h1>
-          <Wheel colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd}/>
+          <Wheel colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd} updateUser={this.props.updateUser} />
         </div>
       )
     }

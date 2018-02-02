@@ -9,8 +9,12 @@ class Wheel extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			selected: ''
+			added: false,
 		}
+	}
+
+	componentDidMount(){
+		this.addDB();
 	}
 
 	addDB = () => {
@@ -22,7 +26,9 @@ class Wheel extends Component {
 			user: this.props.user
 		}).then((response) => {
 			console.log(response);
-			this.props.callback;
+			this.props.updateUser();
+		}).catch((err) => {
+			console.log('error', err);
 		})
 	}
 
@@ -38,22 +44,21 @@ class Wheel extends Component {
 
 	render(){
 		let array1 = []
-		console.log(this.props.saved);
     	JSON.parse(this.props.saved).forEach(item => array1.push(item.selected));
     	if(!(this.props.selectedState) && this.props.colorsToAnalyze.length === 0){
     		return (<div className="div--container__wheel">
   			<h1>Wheel!</h1>
   			<ColorOptions handleComp={this.props.compCallback}/>
   			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
-  			<button onClick={this.handleDB} className="faves">Add to palette</button>
+  			<button onClick={this.addDB} className="faves">Add to palette</button>
       </div>)
     	} else {
 		return(
       <div className="div--container__wheel">
   			<h1>Wheel!</h1>
-  			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback}/>
+  			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback} />
   			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={array1}/>
-  			<button onClick={this.handleDB} className="faves">Add to palette</button>
+  			<button onClick={this.addDB} className="faves">Add to palette</button>
         {this.props.colorsToAnalyze.map( color => (
           <CompSquare background={color} />
           )
