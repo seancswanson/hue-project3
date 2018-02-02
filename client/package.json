@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "rgb-hex": "^2.1.0",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
