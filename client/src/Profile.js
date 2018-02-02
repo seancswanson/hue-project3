@@ -104,10 +104,10 @@ handleAdd = (color) => {
     if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === false){
       return (
         <div className="div--container__action">
-          <button className="button--profile button--nav__upload" onClick={this.renderUpload}>Upload and Detect</button>
-          <button className="button--profile button--nav__picker" onClick={this.renderWheel}>Color Picker</button>
+          <button className="button--profile button--nav__upload button--below" onClick={this.renderUpload}>Upload and Detect</button>
+          <button className="button--profile button--nav__picker button--below" onClick={this.renderWheel}>Color Picker</button>
           <h2 className="h2--profile__greeting">HELLO, {this.props.user.name}!</h2>
-          <h4 className="h4--profile__greeting">Get startd using the buttons below</h4>
+          <h4 className="h4--profile__greeting">Get started using the buttons below</h4>
         </div>);
     } else if(this.props.user && this.props.user.name && this.state.upload === true && this.state.wheel === false) {
         return(
@@ -119,7 +119,7 @@ handleAdd = (color) => {
     } else if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === true) {
         return(
         <div className="div--container__action">
-          <button className="button--profile button--nav__upload button--above__picker" onClick={this.renderUpload}>Upload and Detect</button>
+          <button className="button--profile button--nav__upload button--above__detect" onClick={this.renderUpload}>Upload and Detect</button>
           <Wheel colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd}/>
         </div>
       )
