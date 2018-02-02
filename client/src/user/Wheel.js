@@ -9,8 +9,12 @@ class Wheel extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			selected: ''
+			added: false,
 		}
+	}
+
+	componentDidMount(){
+		this.addDB();
 	}
 
 	addDB = () => {
@@ -22,7 +26,9 @@ class Wheel extends Component {
 			user: this.props.user
 		}).then((response) => {
 			console.log(response);
-			this.props.callback;
+			this.props.updateUser();
+		}).catch((err) => {
+			console.log('error', err);
 		})
 	}
 
@@ -38,7 +44,6 @@ class Wheel extends Component {
 
 	render(){
 		let array1 = []
-		console.log(this.props.saved);
     	JSON.parse(this.props.saved).forEach(item => array1.push(item.selected));
     	if(!(this.props.selectedState) && this.props.colorsToAnalyze.length === 0){
     		return (<div className="div--container__wheel">
