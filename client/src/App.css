@@ -276,14 +276,21 @@ nav a:hover {
   margin: 10px auto;
 }
 
+.div--container__alldetected {
+  text-align: center;
+  position: relative;
+}
+
 .div--container__square {
-  display: table-cell;
-  margin: 10px;
+  display: inline-block;
+  margin: 5px;
+
 }
 
 .div--container__detected {
   display: inline-block;
   margin: inherit;
+  max-width: 80px;
 }
 
 .upload-button {
@@ -389,6 +396,8 @@ nav a:hover {
   height: 150px;
   width: 150px;
   margin: -2px 1px;
+  border: 2px solid grey;
+  border-radius: 3px;
 }
 
 /*** Saved Colors ***/
