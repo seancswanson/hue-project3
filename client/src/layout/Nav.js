@@ -7,7 +7,7 @@ class Nav extends Component {
   render(){
     let links = <span />
     if(this.props.user){
-      links = <span><Logout /><Link to="/profile">Profile</Link></span>;
+      links = <span><Logout updateUser={this.props.updateUser} /><Link to="/profile">Profile</Link></span>;
     }
     else {
       links = <span><Link to="/login">Login</Link><Link to="/signup">Sign Up</Link></span>;
