@@ -74,15 +74,12 @@ class App extends Component {
         <Router>
           <div>
             <Nav user={this.state.user} updateUser={this.getUser} />
-            <div className="space">
+            <div className="div--container__content">
               <Flash flashType={this.state.flashType} flash={this.state.flash} setFlash={this.setFlash} cancelFlash={this.cancelFlash} />
               <Route exact path="/" component={Home} />
-              <Route path="/login" component={
-                () => (<Login user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
-              <Route path="/signup" component={
-                () => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
-              <Route path="/profile" component={
-                () => (<Profile user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
+              <Route path="/login" component={() => (<Login user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
+              <Route path="/signup" component={() => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
+              <Route path="/profile" component={() => (<Profile user={this.state.user} setFlash={this.setFlash} updateUser={this.getUser} />)} />
             </div>
           </div>
         </Router>
@@ -95,7 +92,7 @@ class App extends Component {
         <Router>
           <div>
             <Nav user={this.state.user} />
-            <div className="space">
+            <div className="div--container__content">
             <Route path="/profile" component={
                 () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
             </div>

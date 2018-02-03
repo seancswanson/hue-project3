@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-
-
 class Cloud extends Component {
     render(){
         return (
             <div className="main">
-                <h1>Upload your image!</h1>
                 <div className="div--cloud__upload">
                     <button onClick={this.props.callback} className="upload-button">
-                        Add Image
+                        Upload + Detect
                     </button>
                 </div>
                 <img className="div--cloud__image" src={this.props.url} />

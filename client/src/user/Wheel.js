@@ -9,7 +9,6 @@ class Wheel extends Component {
 
 	constructor(props){
 		super(props);
-		console.log('constructor: Obj:', JSON.parse(this.props.saved), 'Obj is an Array?', Array.isArray(JSON.parse(this.props.saved)));
 		this.state = {
 			added: false,
 			saved: JSON.parse(this.props.saved).map(item => {return item.selected})
@@ -60,19 +59,22 @@ class Wheel extends Component {
     		return (<div className="div--container__wheel">
   			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={this.state.saved}/>
   			<h2>Pick a color...any color</h2>
-  		 	
       </div>)
     	} else {
 		return(
       <div className="div--container__wheel">
   			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={this.state.saved}/>
   			<button onClick={this.addDB} className="faves">Add to palette</button>
-  			<button onClick={this.removeFromDB}>Remove from palette</button>
+  			<button onClick={this.removeFromDB} className="faves">Remove from palette</button>
+        <div className="div--container__coloroptions">
   			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback}/>
+        </div>
+        <div className="div--container__analyzedcolors">
         {this.props.colorsToAnalyze.map( color => (
           <CompSquare renderWheelStoreColor={this.props.renderWheelStoreColor} background={color} />
           )
         )}
+        </div>
       </div>
 		)
 	}
