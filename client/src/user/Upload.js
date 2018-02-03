@@ -24,7 +24,7 @@ class Upload extends Component {
     uploadWidget = () => {
       let imageURL;
       let base = this
-        window.cloudinary.openUploadWidget({ cloud_name: 'huecloud', upload_preset: 'p22agdmm', tags:[], sources: ['local', 'url', 'facebook'],  stylesheet: './CloudinaryWidget.css'},
+        window.cloudinary.openUploadWidget({ cloud_name: 'huecloud', upload_preset: 'p22agdmm', tags:[], sources: ['local', 'url', 'facebook'],  stylesheet: 'https://drive.google.com/uc?export=download&id=14TLPYGXznm_-YDsDdahWL9UZzWj5LwFc'},
             function(error, result) {
              base.setState({imageUrl: result[0].secure_url});
              console.log(base.state.imageUrl)

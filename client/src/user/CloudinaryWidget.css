@@ -42,16 +42,17 @@ ul {
 
 .widget {
     display: none;
-    background-color: cadetblue;
-    margin: 200px auto;
-    border: 4px solid #ffffff42;
-    border-radius: 1px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-box-shadow: 5px 5px 5px #fcf8e30a;
-    -webkit-box-shadow: 5px 5px 5px #fcf8e30a;
-    box-shadow: 5px 5px 5px #fcf8e30a;
-    max-width: 500px;
+    background-color: cadetblue !important;
+    margin: 100px auto !important;
+    border: 4px solid #ffffff42 !important;
+    top: 0 !important;
+    border-radius: 1px !important;
+    -moz-border-radius: 6px !important;
+    -webkit-border-radius: 6px !important;
+    -moz-box-shadow: 5px 5px 5px #fcf8e30a !important;
+    -webkit-box-shadow: 5px 5px 5px #fcf8e30a !important;
+    box-shadow: 5px 5px 5px #fcf8e30a !important;
+    max-width: 500px !important;
 }
 
 .widget.active {
@@ -103,10 +104,11 @@ ul {
     font-size: 20px;
     line-height: 20px;
     position: absolute;
-    bottom: -20px;
+    bottom: 10px !important;
     left: 5;
     width: 85px;
-    text-align: center
+    text-align: center;
+    text-decoration:underline !important;
 }
 
 .widget .header .sources .source .icon {
@@ -116,8 +118,6 @@ ul {
     left: 30px;
     width: 32px;
     height: 28px;
-    background-repeat: no-repeat;
-    background-image: url(images/widget_menu.png)
 }
 
 .widget .header .sources .source.active {

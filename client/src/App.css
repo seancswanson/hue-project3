@@ -208,9 +208,8 @@ nav a:hover {
   left: -80px !important;
 }
 
-.button--below
-button--below{
-  bottom: -250px !important;
+.button--below .button--below{
+  bottom: -240px !important;
 }
 .button--above__detect {
   bottom: -35px!important;
