@@ -7,7 +7,19 @@ var request = require('request');
 var bodyParser = require('body-parser');
 
 router.get('/', function(req, res){
-	res.send('saved colors');
+	console.log("worky",req.body);//should console log something
+	User.find({_id: req.body.id}, function(err, user){
+		console.log("user",user);//here's the first place where stuff isn't working
+		res.json(user.saved);
+	}).catch(err => {console.log(err)});
+});
+
+router.post('/color', function(req, res){
+	console.log("worky",req.body);//should console log something
+	User.find({_id: req.body.id}, function(err, user){
+		console.log("user",user[0].saved);//here's the first place where stuff isn't working
+		res.json(user[0].saved);
+	}).catch(err => {console.log(err)});
 });
 
 router.post('/', function(req, res, next){
