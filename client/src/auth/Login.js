@@ -7,7 +7,8 @@ class Login extends Component {
     super(props)
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      redirect: false
     }
   }
 
@@ -26,7 +27,9 @@ class Login extends Component {
       password: this.state.password
     }).then((result) => {
       localStorage.setItem('mernToken', result.data.token);
-      this.setState({ success: true });
+      this.setState({ 
+        success: true,
+        redirect: true });
       this.props.updateUser();
     }).catch((error) => {
       console.log('error returned', error.response.data);
@@ -36,7 +39,7 @@ class Login extends Component {
 
   render() {
     let form = '';
-    if(this.props.user){
+    if(this.state.redirect){
       return (<Redirect to="/profile" />);
     }
     else {

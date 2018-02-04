@@ -197,6 +197,7 @@ nav a:hover {
   position: relative;
   left: -50px;
   bottom: -190px;
+  background: black !important;
 }
 
 .button--nav__upload {
@@ -205,9 +206,11 @@ nav a:hover {
   position: relative;
   left: -100px;
   bottom: -190px;
+  background: black !important;
 }
 
 .button--above__picker {
+  background: black !important;
   bottom: 5px !important;
   left: -70px !important;
 }
@@ -216,6 +219,7 @@ nav a:hover {
   bottom: -240px !important;
 }
 .button--above__detect {
+  background: black !important;
   bottom: -35px!important;
   left: -70px!important;
 }
@@ -360,6 +364,23 @@ nav a:hover {
 .sketch-picker {
   margin: 30px auto 0 auto!important;
   width: 311px !important;
+}
+
+.sketch-picker > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div > div {
+  height: 13px !important;
+  margin: 0 !important;
+}
+.div--container__content > div > div > div > div:nth-child(1) > div {
+  border-radius: 4px !important;
+}
+
+.div--container__content > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+  height: 13px !important;
+}
+
+.hue-horizontal {
+  height: 13px !important;
+  border-radius: 5px !important;
 }
 
 /*Complementary colors*/

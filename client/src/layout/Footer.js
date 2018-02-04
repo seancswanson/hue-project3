@@ -4,7 +4,7 @@ class Footer extends Component {
   render(){
     return(
         <div className="footer">
-            <span className="footer-text"><a href="#">Jade Rosse</a>, <a href="#">Desiree Rainey</a>, <a href="#">Sean Swanson</a> &copy; {new Date().getFullYear()}</span>
+            <span className="footer-text"><a href="https://www.jaderosse.com">Jade Rosse</a>, <a href="#">Desiree Rainey</a>, <a href="https://www.seancswanson.com">Sean Swanson</a> &copy; {new Date().getFullYear()}</span>
         </div>
       );
   }

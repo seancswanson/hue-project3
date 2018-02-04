@@ -14,7 +14,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      user: {}
+      user: {},
+      showProfileNav: false
     }
   }
   componentDidMount = () => {
@@ -67,13 +68,19 @@ class App extends Component {
     });
   }
 
+  handleShowProfileNav = () => {
+    this.setState({
+      showProfileNav: true,
+    })
+  }
+
   render() {
     if(!(this.state.user)){
     return (
       <div className="App">
         <Router>
           <div>
-            <Nav user={this.state.user} updateUser={this.getUser} />
+            <Nav user={this.state.user} updateUser={this.getUser} showProfileNav={this.state.showProfileNav} updateUser={this.getUser} />
             <div className="div--container__content">
               <Flash flashType={this.state.flashType} flash={this.state.flash} setFlash={this.setFlash} cancelFlash={this.cancelFlash} />
               <Route exact path="/" component={Home} />
@@ -91,7 +98,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Nav user={this.state.user} />
+            <Nav user={this.state.user} showProfileNav={this.state.showProfileNav} updateUser={this.getUser} toggleProfileFunc={this.handleShowProfileNav}/>
             <div className="div--container__content">
             <Route path="/profile" component={
                 () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
