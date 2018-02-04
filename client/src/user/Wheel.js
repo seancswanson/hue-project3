@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import Profile from '../Profile';
 import {SketchPicker} from 'react-color';
 import ColorOptions from './ColorOptions';
 import axios from 'axios';
 import CompSquare from './CompSquare';
 
 class Wheel extends Component {
-
 	constructor(props){
 		super(props);
 		this.state = {
@@ -15,20 +13,14 @@ class Wheel extends Component {
 		}
 	}
 
-
 	addDB = () => {
 		let base = this
-		console.log(base.props.selectedColor);
-		console.log(this.props.user);
 		axios.post('/saved', {
 			selected: base.props.selectedColor,
 			user: this.props.user
 		}).then((result) => {
-			console.log(result);
-			console.log('saved', base.props.selectedColor);
 			let newSaved = this.state.saved;
 			newSaved.push(base.props.selectedColor);
-			console.log('new state', newSaved);
 			this.setState({ saved: newSaved });
 		}).catch((err) => {
 			console.log('error', err);

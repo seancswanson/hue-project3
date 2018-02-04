@@ -20,80 +20,68 @@ class Profile extends Component {
   }
 
 renderUpload = () => {
-  console.log("Clicked")
   let base = this
   base.setState({
     upload: true,
-    wheel: false,
+    wheel: false
   })
 }
 
 renderWheel = () => {
-  console.log("Clicked")
     let base = this
-  base.setState({
-    upload: false,
-    wheel: true,
+    base.setState({
+      upload: false,
+      wheel: true
   })
 }
 
 renderWheelStoreColor = (color) => {
-    console.log("Clicked")
     let base = this
     base.setState({
-    upload: false,
-    wheel: true,
-    selectedColor: color,
-
+      upload: false,
+      wheel: true,
+      selectedColor: color,
   })
 }
 
 handleComp = () => {
   let base = this;
-  console.log(base.state.selectedColor);
   color = base.state.selectedColor;
   myColor = new complementaryColors(color);
   myColor = myColor.complementary();
   base.setState({
     colorsToAnalyze: myColor
   })
-  console.log(myColor);
 }
 
 handleAnalogous = () => {
   let base = this;
-  console.log(base.state.selectedColor);
   color = base.state.selectedColor;
   myColor = new complementaryColors(color);
   myColor = myColor.analogous();
   base.setState({
     colorsToAnalyze: myColor
   })
-  console.log(myColor);
 }
 
 handleTriadic = () => {
   let base = this;
-  console.log(base.state.selectedColor);
   color = base.state.selectedColor;
   myColor = new complementaryColors(color);
   myColor = myColor.splitComplementary();
   base.setState({
     colorsToAnalyze: myColor
   })
-  console.log(myColor);
 }
 
 handleTetradic = () => {
   let base = this;
-  console.log(base.state.selectedColor);
   color = base.state.selectedColor;
   myColor = new complementaryColors(color);
   myColor = myColor.tetradic();
   base.setState({
     colorsToAnalyze: myColor
   })
-  console.log(myColor);
 }
 
 handleAdd = (color) => {

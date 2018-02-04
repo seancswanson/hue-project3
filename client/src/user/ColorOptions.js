@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import complementaryColors from 'complementary-colors';
 
 class ColorOptions extends Component {
 	constructor() {
