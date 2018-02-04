@@ -57,13 +57,13 @@ class Wheel extends Component {
     	JSON.parse(this.props.saved).forEach(item => array1.push(item.selected));
     	if(!(this.props.selectedState) && this.props.colorsToAnalyze.length === 0){
     		return (<div className="div--container__wheel">
-  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={this.state.saved}/>
+  			<SketchPicker disableAlpha={true} onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={this.state.saved}/>
   			<h2>Pick a color...any color</h2>
       </div>)
     	} else {
 		return(
       <div className="div--container__wheel">
-  			<SketchPicker onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={this.state.saved}/>
+  			<SketchPicker disableAlpha={true} onChangeComplete={this.props.handleAdd} color={this.props.selectedColor} presetColors={this.state.saved}/>
   			<button onClick={this.addDB} className="faves">Add to palette</button>
   			<button onClick={this.removeFromDB} className="faves">Remove from palette</button>
         <div className="div--container__coloroptions">
