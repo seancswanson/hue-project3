@@ -49,7 +49,7 @@ sean-swan@hotmail.com
 
 ![userflow]
 ![wireframes]
-![demo](/client/hue_gif.gif)
+![demo](./client/hue_gif.gif)
 
 ### User Stories
 
