@@ -69,10 +69,6 @@ nav a:hover {
   animation-duration: 9000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear; 
-  /* transform: rotate(3deg); */
-   /* transform: rotate(0.3rad);/ */
-   /* transform: rotate(3grad); */ 
-   /* transform: rotate(.03turn);  */
 }
 
 /**** AUTH *****/
@@ -168,11 +164,6 @@ nav a:hover {
 }
 
 /****** Profile *******/
-.div--container__action {
-  position: relative;
-  top: -40px;
-}
-
 .button--profile {
   font-family: 'Oswald';
   font-size: 22px;

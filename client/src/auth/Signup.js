@@ -8,7 +8,8 @@ class Signup extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      redirect: false
     }
   }
 
@@ -31,6 +32,9 @@ class Signup extends Component {
     }).then(result => {
       localStorage.setItem('mernToken', result.data.token);
       this.props.updateUser();
+      this.setState({
+        redirect: true
+      })
     }).catch(error => {
       console.log(error.response);
       this.props.setFlash('error', error.response.status + ': ' + (error.response.data && error.response.data.error ? error.response.data.message : error.response.statusText));
@@ -67,15 +71,24 @@ class Signup extends Component {
                  <input type="submit" value="Sign up!" className="btn-primary button--primary" />
               </form>);
     }
+    if(this.state.redirect == false){
     return (
       <div className="div--container__form signup">
         <h1 className="h1--auth">Create an account!</h1>
         <h1 className="h1--auth__free">(it's free)</h1>
         {form}
-        {this.props.user ? <Redirect to="/profile" /> : ''}
-      </div>
-    );
+        {console.log(this.state.redirect)}
+        </div>
+      )
+    } else {
+      return(
+        <div>
+        <Redirect to="/profile" />
+        </div>
+        )
+      }
   }
 }
+
 
 export default Signup;
