@@ -1,4 +1,4 @@
-# mndf.ll
+# Hue
 A color detection and analysis utility that allows users to calculate prominent colors from an uploaded image to craft color schemes that allow for cohesive website design. Sign up and start exploring color with **HUE** today!
 
 ![Title Screen]
