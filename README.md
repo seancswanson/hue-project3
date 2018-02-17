@@ -3,7 +3,7 @@ A color detection and analysis utility that allows users to calculate prominent 
 
 ![Title Screen](/hue.png) 
 
-![Example]
+![Example](/hue_example.gif)
 
 ## Instructions
 
@@ -90,7 +90,7 @@ sean-swan@hotmail.com
 
 **Desiree Rainey** - principal developer, bug squasher.
 
-**Sean Swanson** - principal developer, bug squasher, goal setter.
+[**Sean Swanson**](http://seancswanson.com) - principal developer, bug squasher, goal setter.
 
 ### Acknowledgments
 
