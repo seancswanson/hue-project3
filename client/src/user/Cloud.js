@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Cloud extends Component {
     render(){
     const uploadStyle = {
-      display: this.props.detect ? 'initial' : 'none'
+      display: this.props.detected ? 'initial' : 'none'
     }
         return (
             <div className="main">

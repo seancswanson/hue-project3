@@ -186,7 +186,6 @@ nav a:hover {
   padding:  10px;
   display: inline-block;
   position: relative;
-  left: -50px;
   bottom: -190px;
   background: black !important;
 }
@@ -195,7 +194,6 @@ nav a:hover {
   padding: 10px;
   display: inline-block;
   position: relative;
-  left: -100px;
   bottom: -190px;
   background: black !important;
 }
@@ -229,6 +227,9 @@ nav a:hover {
   font-style: italic !important;
   color: black !important;
   letter-spacing: 1px;
+  display: inline-block !important;
+  font-size: 8vh !important;
+  padding: 10px;
 }
 
 .h4--profile__greeting {
@@ -313,12 +314,12 @@ nav a:hover {
 }
 
 .div--cloud__image {
-  background: black;
+  background: rgba(255,255,.2);
   margin: 10px auto;
   max-height: 300px;
-  max-width: 300px;
-  padding: 10px;
-  border-radius: 6px  ;
+  max-width: 87vw;
+  padding: 5px;
+  border-radius: 6px;
 }
 
 .h1--detected__percent {
@@ -426,7 +427,7 @@ nav a:hover {
   height: 150px;
   width: 150px;
   margin: -2px 1px;
-  border: 2px solid grey;
+  border: 1px solid rgba(0,0,0,.5);
   border-radius: 3px;
 }
 
