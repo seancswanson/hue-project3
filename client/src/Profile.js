@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Upload from './user/Upload';
 import Wheel from './user/Wheel';
 import complementaryColors from 'complementary-colors';
-import Color from 'color';
 
 var color;
 var myColor;
@@ -68,17 +67,17 @@ handleTriadic = () => {
   let base = this;
   color = base.state.selectedColor;
   myColor = new complementaryColors(color);
-  myColor = myColor.splitComplementary();
+  myColor = myColor.triad();
   base.setState({
     colorsToAnalyze: myColor
   })
 }
 
-handleTetradic = () => {
+handleSquare = () => {
   let base = this;
   color = base.state.selectedColor;
   myColor = new complementaryColors(color);
-  myColor = myColor.tetradic();
+  myColor = myColor.square();
   base.setState({
     colorsToAnalyze: myColor
   })
@@ -108,7 +107,7 @@ handleAdd = (color) => {
         return(
         <div className="div--container__action">
           <button className="button--profile button--nav__upload button--above__detect" onClick={this.renderUpload}>Color Detection</button>
-          <Wheel renderWheelStoreColor={this.renderWheelStoreColor} colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} tetradicCallback={this.handleTetradic} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd} />
+          <Wheel renderWheelStoreColor={this.renderWheelStoreColor} colorsToAnalyze={this.state.colorsToAnalyze} selectedState={this.state.selectedColor} analCallback={this.handleAnalogous} squareCallback={this.handleSquare} triadicCallback={this.handleTriadic} compCallback={this.handleComp} user={this.props.user} saved={JSON.stringify(this.props.user.saved)} selectedColor={this.state.selectedColor} handleAdd={this.handleAdd} />
         </div>
       )
     }

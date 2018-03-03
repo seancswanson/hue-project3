@@ -59,7 +59,7 @@ class Wheel extends Component {
   			<button onClick={this.addDB} className="faves">Add to palette</button>
   			<button onClick={this.removeFromDB} className="faves">Remove from palette</button>
         <div className="div--container__coloroptions">
-  			<ColorOptions handleComp={this.props.compCallback} tetradicCallback={this.props.tetradicCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback}/>
+  			<ColorOptions handleComp={this.props.compCallback} squareCallback={this.props.squareCallback} triadicCallback={this.props.triadicCallback} analCallback={this.props.analCallback}/>
         </div>
         <div className="div--container__analyzedcolors">
         {this.props.colorsToAnalyze.map( color => (

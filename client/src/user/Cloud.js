@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 
 class Cloud extends Component {
     render(){
@@ -13,7 +12,7 @@ class Cloud extends Component {
                         Upload + Detect
                     </button>
                 </div>
-                <img className="div--cloud__image" src={this.props.url} style={uploadStyle}/>
+                <img alt="uploaded image" className="div--cloud__image" src={this.props.url} style={uploadStyle}/>
             </div>
         );
     }

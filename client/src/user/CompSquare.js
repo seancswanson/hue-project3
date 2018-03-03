@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import rgbToHex from 'rgb-to-hex';
-import parseRgb from 'parse-rgb';
 
 
 
@@ -10,7 +9,6 @@ class CompSquare extends Component {
     var colorToAnalyze = rgbToHex(`'rgb(${this.props.background.r},${this.props.background.g},${this.props.background.b})`);
     colorToAnalyze = `#${colorToAnalyze}`;
     this.props.renderWheelStoreColor(colorToAnalyze)
-    console.log(colorToAnalyze);
   }
 
   render(){

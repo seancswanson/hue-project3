@@ -2,14 +2,13 @@ import React, {Component} from 'react';
 import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 import Cloud from './Cloud';
 import axios from 'axios';
-import Wheel from './Wheel';   
 import DetectedSquare from './DetectedSquare'
 
 var upload;
 
 class Upload extends Component {
     constructor(props){
-        super(props);ß
+        super(props);
         this.state = {
             imageUrl: '',
             colorResponse: [],

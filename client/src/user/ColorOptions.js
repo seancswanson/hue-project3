@@ -24,14 +24,14 @@ class ColorOptions extends Component {
 		return(
 			<div className="div--container__options">
 				<div className="div--picker__options" onMouseOver={this.handleMouseIn} onMouseOut={this.handleMouseOut}>
-						<button onClick={this.props.handleComp}>Complementary</button>
-						<button onClick={this.props.triadicCallback}>Triadic</button>
-						<button onClick={this.props.tetradicCallback}>Tetradic</button>
-						<button onClick={this.props.analCallback}>Analogous</button>
+					<button onClick={this.props.handleComp}>Complementary</button>
+					<button onClick={this.props.triadicCallback}>Triadic</button>
+					<button onClick={this.props.squareCallback}>Square</button>
+					<button onClick={this.props.analCallback}>Analogous</button>
 				</div>
 				<p className="p--picker__description">Complementary colors are directly opposites</p>
 				<p className="p--picker__description">Triadic colors form a triangle on a wheel.</p>
-				<p className="p--picker__description">Tetradic colors form a rectangle on a wheel.</p>
+				<p className="p--picker__description">Square colors form a square on a wheel.</p>
 				<p className="p--picker__description">Analogous colors are adjacent to each other.</p>
 			</div>
 		)
