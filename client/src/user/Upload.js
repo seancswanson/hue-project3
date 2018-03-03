@@ -9,7 +9,7 @@ var upload;
 
 class Upload extends Component {
     constructor(props){
-        super(props);
+        super(props);ß
         this.state = {
             imageUrl: '',
             colorResponse: [],
@@ -39,16 +39,12 @@ class Upload extends Component {
     }
 
 	render(){
-    const uploadStyle = {
-      display: this.state.detect ? 'initial' : 'none'
-    }
-
     if (this.state.imageColors.length > 0){
     } else {
-      upload = <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
+      upload = <Cloud callback={this.uploadWidget} url={this.state.imageUrl} detected={this.state.detect} />
     }
 		return(
-      <div className="div--container__upload" style={uploadStyle}>
+      <div className="div--container__upload">
         {upload}
         <div className="div--container__alldetected">
             {this.state.imageColors.map( color => (

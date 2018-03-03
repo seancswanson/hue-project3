@@ -207,7 +207,10 @@ nav a:hover {
 }
 
 .button--below {
+  display: block !important;
+  top: 0 !important;
 }
+
 .button--above__detect {
   background: black !important;
   bottom: 5px!important;
@@ -371,6 +374,22 @@ nav a:hover {
 .hue-horizontal {
   height: 13px !important;
   border-radius: 5px !important;
+}
+
+.div--picker__options {
+  margin-bottom: 10px;
+}
+
+.div--container__options{
+  margin-bottom: 20px;
+}
+.p--picker__description {
+  text-align: left;
+  position: relative;
+  left: 231px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 /*Complementary colors*/
