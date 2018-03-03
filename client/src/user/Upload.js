@@ -39,12 +39,16 @@ class Upload extends Component {
     }
 
 	render(){
+    const uploadStyle = {
+      display: this.state.detect ? 'initial' : 'none'
+    }
+
     if (this.state.imageColors.length > 0){
     } else {
       upload = <Cloud callback={this.uploadWidget} url={this.state.imageUrl} />
     }
 		return(
-      <div className="div--container__upload">
+      <div className="div--container__upload" style={uploadStyle}>
         {upload}
         <div className="div--container__alldetected">
             {this.state.imageColors.map( color => (
