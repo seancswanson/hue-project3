@@ -18,28 +18,20 @@ class ColorOptions extends Component {
 	
 	render(){
 		const tooltipStyle = {
-			display: this.state.hover ? 'block' : 'none'
+			display: this.state.hover ? 'initial' : 'none'
 		}
 
 		return(
 			<div>
 				<div onMouseOver={this.handleMouseIn} onMouseOut={this.handleMouseOut}>
 						<button onClick={this.props.handleComp}>Complementary</button>
-					<div>
-						<div style={tooltipStyle}>Colors Directly Opposite</div>
-					</div>
+						<span style={tooltipStyle}>Colors Directly Opposite</span>
 						<button onClick={this.props.triadicCallback}>Triadic</button>
-					<div>
-						<div style={tooltipStyle}>Three Equally Spaced Colors</div>
-					</div>
+						<span style={tooltipStyle}>Three Equally Spaced Colors</span>
 						<button onClick={this.props.tetradicCallback}>Tetradic</button>
-					<div>
-						<div style={tooltipStyle}>Colors Forming a Rectangle</div>
-					</div>
+						<span style={tooltipStyle}>Colors Forming a Rectangle</span>
 						<button onClick={this.props.analCallback}>Analogous</button>
-					<div>
-						<div style={tooltipStyle}>Group of Three Colors</div>
-					</div>
+						<span style={tooltipStyle}>Group of Three Colors</span>
 				</div>
 			</div>
 		)
