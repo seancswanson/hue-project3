@@ -115,7 +115,7 @@ handleAdd = (color) => {
     else {
       return (
         <div className="div--container__home">
-          <p><img className="img--home__logo gray" src="http://res.cloudinary.com/huecloud/image/upload/v1517519224/huelogo_yufyyq.png" /></p>
+          <p><img className="img--home__logo gray" src="https://res.cloudinary.com/huecloud/image/upload/v1517519224/huelogo_yufyyq.png" /></p>
           <h2 className="h2--profile__droid">You need an account to view this page!</h2>
           <h3 className="h3--profile">Been here before?</h3>
           <Link to='/login'><button className="button--profile">login</button></Link>
