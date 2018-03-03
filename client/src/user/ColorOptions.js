@@ -25,13 +25,13 @@ class ColorOptions extends Component {
 			<div>
 				<div onMouseOver={this.handleMouseIn} onMouseOut={this.handleMouseOut}>
 						<button onClick={this.props.handleComp}>Complementary</button>
-						<span style={tooltipStyle}>Colors Directly Opposite</span>
 						<button onClick={this.props.triadicCallback}>Triadic</button>
-						<span style={tooltipStyle}>Three Equally Spaced Colors</span>
 						<button onClick={this.props.tetradicCallback}>Tetradic</button>
-						<span style={tooltipStyle}>Colors Forming a Rectangle</span>
 						<button onClick={this.props.analCallback}>Analogous</button>
-						<span style={tooltipStyle}>Group of Three Colors</span>
+						<p>Complementary colors are directly opposites</p>
+						<p>Triadic colors form a triangle.</p>
+						<p>Tetradic colors form a rectangle.</p>
+						<p>Analogous colors are adjacent to each other.</p>
 				</div>
 			</div>
 		)

@@ -92,10 +92,10 @@ handleAdd = (color) => {
     if(this.props.user && this.props.user.name && this.state.upload === false && this.state.wheel === false){
       return (
         <div className="div--container__action">
-          <button className="button--profile button--nav__upload button--below" onClick={this.renderUpload}>Upload and Detect</button>
-          <button className="button--profile button--nav__picker button--below" onClick={this.renderWheel}>Color Picker</button>
           <h2 className="h2--profile__greeting">HELLO, {this.props.user.name}!</h2>
           <h4 className="h4--profile__greeting">Get started using the buttons below</h4>
+          <button className="button--profile button--nav__upload button--below" onClick={this.renderUpload}>Color Detection</button>
+          <button className="button--profile button--nav__picker button--below" onClick={this.renderWheel}>Color Picker</button>
         </div>);
     } else if(this.props.user && this.props.user.name && this.state.upload === true && this.state.wheel === false) {
         return(

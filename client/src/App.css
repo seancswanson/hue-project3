@@ -14,10 +14,10 @@ nav {
 }
 
 nav a {
-  margin: 10px 15px;
+  margin: 10px 5px;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: 20px;
   color: white;
   text-align: center;
   float: left;
@@ -203,16 +203,15 @@ nav a:hover {
 .button--above__picker {
   background: black !important;
   bottom: 5px !important;
-  left: -70px !important;
+  left: -65px !important;
 }
 
-.button--below .button--below{
-  bottom: -240px !important;
+.button--below {
 }
 .button--above__detect {
   background: black !important;
-  bottom: -35px!important;
-  left: -70px!important;
+  bottom: 5px!important;
+  left: -65px!important;
 }
 
 .gray {
@@ -444,12 +443,11 @@ nav a:hover {
 .footer-text {
   color: #fff;
   font-size: 18px;
-  position: relative;
-  top: 15px;
-  right: 10px;
   font-family: 'Oswald';
   text-transform: uppercase;
+  margin: 5px;
   float: right;
+  width: 230px;
 }
 
 
@@ -459,18 +457,3 @@ nav a:hover {
 .App {
   text-align: center;
 }
-
-
-.btn-primary {
-  color: #fff;
-  background-color: #11f;
-  border-radius: 2px;
-  border: none;
-  padding: 3px;
-}
-
-.btn-primary:hover {
-  background-color: #77f;
-}
-
-
